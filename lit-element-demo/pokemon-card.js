@@ -8,7 +8,9 @@ export class PokemonCard extends LitElement {
             set: { type: String, reflect: true },
             large: { type: Boolean, reflect: true },
             card: { type: Object },
-            fetchCard: { type: Boolean }
+            fetchCard: { type: Boolean },
+            realistic: { type: Boolean, reflect: true },
+            opaque: { type: Boolean, reflect: true }
         };
     }
 
@@ -20,12 +22,24 @@ export class PokemonCard extends LitElement {
         this.large = false;
         this.card = null;
         this.fetchCard = false;
+        this.realistic = false;
+        this.opaque = false;
     }
 
     updated(_changedProperties) {
         if (this.fetchCard && (_changedProperties.has('pokemon') || _changedProperties.has('set'))) {
             this.updateCard();
         }
+    }
+
+    firstUpdated() {
+        this.addEventListener("mouseenter", e => {
+            this.dispatchEvent(new CustomEvent("pokemon-hover-start", { detail: this.card.id }));
+        });
+        this.addEventListener("mouseleave", e => {
+            this.dispatchEvent(new CustomEvent("pokemon-hover-end"));
+        });
+
     }
 
     async updateCard() {
@@ -40,16 +54,15 @@ export class PokemonCard extends LitElement {
         this.card = cardInfo.data[0];
     }
 
-    handleSize(e) {
-        this.large = e.target.checked;
-    }
-
     render() {
         if (!this.card) return html`<p>No pokemon found</p>`;
         return html`
-            <p>Pokemon: ${this.pokemon}</p>
-            <p>From set: ${this.set}</p>
-            <input type="checkbox" ?checked=${this.large} @input=${this.handleSize}>Enlarge</button>
+            ${this.large
+                ? html`
+                      <p>Pokemon: ${this.pokemon}</p>
+                      <p>From set: ${this.set}</p>
+                  `
+                : ''}
             <img id="card-image" src="${this.large ? this.card.images.large : this.card.images.small}" />
         `;
     }
@@ -58,6 +71,17 @@ export class PokemonCard extends LitElement {
         return css`
             :host {
                 display: block;
+                cursor: pointer;
+                transition: 200ms ease-in-out;
+            }
+
+            :host([realistic]) {
+                margin: 0.5rem;
+
+            }
+
+            :host([realistic]:hover) {
+                filter: drop-shadow(2px 4px 6px black);
             }
 
             img {

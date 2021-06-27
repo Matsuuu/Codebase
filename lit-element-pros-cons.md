@@ -6,3 +6,4 @@
 + Eases the rendering process
 + Effective lifecycle operations
 + A bunch of directives to help out with more special cases
++ The best bang for your buck Web Component Library to date (in my opinion)

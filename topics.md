@@ -1,5 +1,3 @@
-
-
 - Extending pre-existing elements
 - Creating custom elements
 - ShadowRoot

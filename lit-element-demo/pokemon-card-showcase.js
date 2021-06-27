@@ -6,6 +6,7 @@ export class PokemonCardShowcase extends LitElement {
         return {
             cards: { type: Array },
             pokemon: { type: String },
+            hoveredCardId: { type: String },
         };
     }
 
@@ -13,6 +14,7 @@ export class PokemonCardShowcase extends LitElement {
         super();
         this.pokemon = 'NO_POKEMON';
         this.cards = [];
+        this.hoveredCardId = null;
     }
 
     updated(_changedProperties) {
@@ -26,6 +28,18 @@ export class PokemonCardShowcase extends LitElement {
         this.cards = res.data;
     }
 
+    _handleClick(e) {
+        e.target.toggleAttribute('large');
+    }
+
+    _onHoverStart(e) {
+        this.hoveredCardId = e.detail;
+    }
+
+    _onHoverEnd(e) {
+        this.hoveredCardId = null;
+    }
+
     render() {
         return html`<p>All cards of the pokemon ${this.pokemon}</p>
 
@@ -36,6 +50,11 @@ export class PokemonCardShowcase extends LitElement {
                         set=${card.set.name}
                         ?fetchCard=${false}
                         .card=${card}
+                        @click=${this._handleClick}
+                        realistic
+                        @pokemon-hover-start=${this._onHoverStart}
+                        @pokemon-hover-end=${this._onHoverEnd}
+                        ?opaque=${this.hoveredCardId && this.hoveredCardId !== card.id}
                     ></pokemon-card>
                 `,
         )} `;
@@ -54,6 +73,10 @@ export class PokemonCardShowcase extends LitElement {
             pokemon-card[large] {
                 width: 500px;
             }
+
+        pokemon-card[opaque] {
+            opacity: 0.3;
+        }
         `;
     }
 }
