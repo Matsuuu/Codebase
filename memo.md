@@ -67,6 +67,9 @@ get the data, iterate through it and display it
 - Show off how effective lit-html is with arrays of nodes: Only updates the attributes, and 
 doesn't re-render the whole list
 
+- Filter, opacity etc do cool shit
+- On mouseenter and mouseleave launch event that makes all others opaque
+
 - I don't know if we have time for more.
 
 - Explain that this was JUST A SURFACE TOUCH.
