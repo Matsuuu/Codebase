@@ -5,6 +5,4 @@
 + Typescript support
 + Eases the rendering process
 + Effective lifecycle operations
-
-
-
++ A bunch of directives to help out with more special cases

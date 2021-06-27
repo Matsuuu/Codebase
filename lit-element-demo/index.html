@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            pokemon-card {
+                width: 200px;
+            }
+
+            pokemon-card[large] {
+                width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <input type="text" name="pokemon" placeholder="Pokemon name" value="Pikachu" />
+            <input type="submit" value="search" />
+        </form>
+
+        <pokemon-card-showcase></pokemon-card-showcase>
+        <script type="module" src="./pokemon-card.js"></script>
+        <script type="module" src="./pokemon-card-showcase.js"></script>
+
+        <script>
+            const showcase = document.querySelector('pokemon-card-showcase');
+            const form = document.querySelector('form');
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+
+                const pokemon = formData.get('pokemon');
+                if (pokemon) {
+                    showcase.pokemon = pokemon;
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -39,4 +39,34 @@ in a lot more trouble
 - Attribute de-sync, since 2 attributes change
     - Show a simple requestAnimationFrame requestUpdate
 
+- Start introducing LitElement
+- Show how much we can just remove from the code
+- Show how nice the render method becomes
+- Introduce properties
+
+- Introcude a enlarge checkbox
+- Make it change the this.large property
+- Show property reflection
+- Make it so that the index.html manages size on attributes and not the element
+    - img: width: 100%;
+
+- Show off the power of lit-html with ?checked on the checkbox on top of the
+previously shown @click
+
+- Create a pokemon-card-showcase -element that lists all pokemons with given name
+- Show off how fast it is to create a new lit element, and how fast you can
+get the data, iterate through it and display it
+- Modify the pokemon-card with a "fetchCard" -flag that is default false
+    - Disable fetch on update if set to false
+
+- Show off how effective lit-html is with arrays of nodes: Only updates the attributes, and 
+doesn't re-render the whole list
+
+- I don't know if we have time for more.
+
+- Explain that this was JUST A SURFACE TOUCH.
+THERES SO MUCH MORE
+
+Other cool stuff if we have time:
+
 - 
