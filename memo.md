@@ -1,3 +1,4 @@
+# Starting Vanillademo
 - type devserver => Print alias code
 
 - Unix philospohy: Make simple components that do one thing 
@@ -17,6 +18,8 @@ well and interoperate with others nicely
         - Show how to handle boolean attributes and reflection
 
 After showing off the HTML Example, show how fast you can get up and running with lit
+
+# Moving into lit html demo
 
 - npm init -y
 - npm install lit
@@ -38,6 +41,8 @@ in a lot more trouble
 
 - Attribute de-sync, since 2 attributes change
     - Show a simple requestAnimationFrame requestUpdate
+
+# Moving into LitElement Demo
 
 - Start introducing LitElement
 - Show how much we can just remove from the code
@@ -68,5 +73,3 @@ doesn't re-render the whole list
 THERES SO MUCH MORE
 
 Other cool stuff if we have time:
-
-- 
