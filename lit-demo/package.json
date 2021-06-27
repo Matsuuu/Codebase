@@ -1,0 +1,19 @@
+{
+  "name": "lit-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --node-resolve --watch --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "*",
+    "pokemon-api": "file:../pokemon-api"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.1.17"
+  }
+}

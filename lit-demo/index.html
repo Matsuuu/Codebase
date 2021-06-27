@@ -1,0 +1,31 @@
+<html>
+  <head> </head>
+  <body>
+    <form>
+      <input type="text" name="pokemon" placeholder="Pokemon name" />
+      <input type="text" name="set" placeholder="Pokemon set" />
+      <input type="submit" value="search" />
+    </form>
+
+    <pokemon-card pokemon="Psyduck" set="basep"></pokemon-card>
+    <script type="module" src="./pokemon-card.js"></script>
+
+    <script>
+      const card = document.querySelector("pokemon-card");
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+
+        const pokemon = formData.get("pokemon");
+        const set = formData.get("set");
+        if (pokemon) {
+          card.setAttribute("pokemon", pokemon);
+        }
+        if (set) {
+          card.setAttribute("set", set);
+        }
+      });
+    </script>
+  </body>
+</html>
