@@ -15,5 +15,5 @@
 
 - lit element
 - Lit Element props
-- Lit ELement attributes
-- Lit ELement Attributes + css <3
+- Lit Element attributes
+- Lit Element Attributes + css <3

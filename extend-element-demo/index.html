@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <style>
+      p {
+        margin-top: 1rem;
+        margin-left: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p is="wavy-paragraph">WTS Rune Platearmor 50k Gold</p>
+
+    <script type="module">
+      class WavyParagraph extends HTMLParagraphElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: "open" });
+          this.speed = 40;
+          const waverText = this.getWaverText();
+          this.shadowRoot.innerHTML = `
+            <style>
+                slot {
+                    opacity: 0;
+                }
+
+                :host {
+                    display: flex;
+                }
+
+                span {
+                    display: block;
+                }
+
+                @keyframes wave {
+                    0% {
+                        transform: translate(0,0);
+                    }
+                    50% {
+                        transform: translate(0, -1rem);
+                    }
+                    100% {
+                        transform: translate(0,0);
+                    }
+                }
+            </style>
+            ${waverText}
+          `;
+        }
+
+        getWaverText() {
+          const text = this.innerHTML;
+          let newContent = "";
+          text.split("").forEach((char, i) => {
+            newContent += `<span style="animation: ${
+              this.speed * text.length
+            }ms wave ease-in-out ${this.speed * i}ms infinite">${char}</span>`;
+          });
+          return newContent;
+        }
+      }
+
+      customElements.define("wavy-paragraph", WavyParagraph, { extends: "p" });
+    </script>
+  </body>
+</html>
