@@ -7,12 +7,6 @@ export class LitTypescript extends LitElement {
       padding: 25px;
       color: var(--lit-typescript-text-color, #000);
     }
-
-    slot[name='greeting'] {
-      display: flex;
-      margin-bottom: 2rem;
-      background: lightgray;
-    }
   `;
 
   @property({ type: String }) title = 'Hey there';
@@ -27,7 +21,6 @@ export class LitTypescript extends LitElement {
     return html`
       <slot name="greeting"><h2>${this.title} Nr. ${this.counter}!</h2></slot>
       <button @click=${this.__increment}>increment</button>
-      <slot></slot>
     `;
   }
 }
