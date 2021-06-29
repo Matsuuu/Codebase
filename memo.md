@@ -1,3 +1,18 @@
+# Pre-Demo
+
+1. Start off by explaining web components
+2. 
+3. Show how easily you can create a normal htmlelement
+4. 
+5. Show encapsulation
+6. 
+7. Show slots
+8.  
+9. Show named slots
+10.  
+11. Show templates
+
+
 # Starting Vanillademo
 - type devserver => Print alias code
 
