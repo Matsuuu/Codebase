@@ -14,6 +14,10 @@ class MyCounter extends HTMLButtonElement {
             this.count++;
             console.log("I've been clicked " + this.count + " times!");
             counterField.innerText = this.count;
+
+            this.dispatchEvent(
+                new CustomEvent("my-custom-event", { detail: { count: this.count } })
+            );
         });
     }
 }
