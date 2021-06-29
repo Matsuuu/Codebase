@@ -1,16 +1,28 @@
 # Pre-Demo
 
+3 API's:
+- Custom Elements API
+- Shadow DOM API
+- HTML Templates
+
 1. Start off by explaining web components
-2. 
-3. Show how easily you can create a normal htmlelement
-4. 
-5. Show encapsulation
-6. 
-7. Show slots
-8.  
-9. Show named slots
-10.  
-11. Show templates
+ 
+2. Show how easily you can create a normal htmlelement
+ 
+3. Show encapsulation
+3.5 Show downfalls of shadow dom. Forms etc.
+ 
+4. Show slots
+  
+5. Show named slots
+  
+6. Show templates
+ 
+7. Showcase importing with just 2 lines of HTML (twitch-stream for example)
+
+8. Showcase document.createElement
+
+9. Host styling and the fact that you have your own component and not a div
 
 
 # Starting Vanillademo
