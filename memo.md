@@ -1,3 +1,6 @@
+This is just a mental memo for me and has much more info than what was actually discussed
+
+
 # Pre-Demo
 
 3 API's:
