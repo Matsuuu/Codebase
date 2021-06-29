@@ -24,6 +24,8 @@
 
 9. Host styling and the fact that you have your own component and not a div
 
+10. Showcase how cool the slots are. Composition, list elements, named slots, etc.
+
 
 # Starting Vanillademo
 - type devserver => Print alias code

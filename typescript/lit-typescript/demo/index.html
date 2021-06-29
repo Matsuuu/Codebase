@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo">
+      <lit-typescript title="Hello owc World!">
+        <div slot="greeting">
+          <h3>Hello and welcome to my counter!</h3>
+          <p>Please do press the button</p>
+        </div>
+        <h3>We are the bottom</h3>
+        <p>Everything without a slot specification is in the default slot</p>
+
+        <div slot="greeting">
+          <p>TBH I don't really care about composition</p>
+        </div>
+
+        <button slot="greeting">Nor do I need a wrapper</button>
+      </lit-typescript>
+    </div>
+
+    <script type="module">
+      import { html, render } from 'lit-html';
+      import '../dist/lit-typescript.js';
+
+      /*const title = 'Hello owc World!';
+      render(
+        html`
+          <lit-typescript .title=${title}> some more light-dom </lit-typescript>
+        `,
+        document.querySelector('#demo')
+      );*/
+    </script>
+  </body>
+</html>
