@@ -38,6 +38,10 @@ export class PokemonCard extends HTMLElement {
         return ['pokemon', 'set', 'large'];
     }
 
+    sayFoo() {
+        console.log("foo", this.pokemon);
+    }
+
     async renderCard() {
         const cardInfo = await getPokemon({
             name: this.pokemon,
@@ -56,7 +60,7 @@ export class PokemonCard extends HTMLElement {
                 </style>
                 <p>Pokemon: ${this.pokemon}</p>
                 <p>From set: ${this.set}</p>
-                <img id="card-image" src="${this.large ? firstCard.images.large : firstCard.images.small}" />
+                <img @click=${this.sayFoo} id="card-image" src="${this.large ? firstCard.images.large : firstCard.images.small}" />
             `,
             this.shadowRoot,
         );

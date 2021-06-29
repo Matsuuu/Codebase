@@ -7,13 +7,13 @@ class MyCounter extends HTMLButtonElement {
         counterText.innerHTML = `I have been clicked <span></span> times!`;
 
         const counterField = counterText.querySelector("span");
-        counterField.innerText = this.count;
+        counterField.innerText = this.count.toString();
         this.parentNode.insertBefore(counterText, this);
 
         this.addEventListener("click", () => {
             this.count++;
             console.log("I've been clicked " + this.count + " times!");
-            counterField.innerText = this.count;
+            counterField.innerText = this.count.toString();
 
             this.dispatchEvent(
                 new CustomEvent("my-custom-event", { detail: { count: this.count } })
